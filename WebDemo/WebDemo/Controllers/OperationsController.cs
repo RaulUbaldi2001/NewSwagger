@@ -51,7 +51,6 @@ namespace WebDemo.Controllers
             repo = new RepositoryCovid();
             List<Codiv19_Data> listaPositivi = repo.LoadCovidUmbria();
             return listaPositivi;
-
         }
 
         // GET api/<controller>/5
