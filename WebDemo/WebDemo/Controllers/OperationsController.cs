@@ -11,6 +11,7 @@ namespace WebDemo.Controllers
     [Route("api/[controller]/[action]/[action]/[action]/[action]")]
     public class OperationsController : Controller
     {
+        RepositoryCovid repo;
         // GET: api/<controller>
         [HttpGet]
         public double GetSum(int a, int b)
@@ -43,6 +44,14 @@ namespace WebDemo.Controllers
                 b--;
             }
             return a;
+        }
+        [HttpGet]
+        public List<Codiv19_Data> GetListPositivi()
+        {
+            repo = new RepositoryCovid();
+            List<Codiv19_Data> listaPositivi = repo.LoadCovidUmbria();
+            return listaPositivi;
+
         }
 
         // GET api/<controller>/5
